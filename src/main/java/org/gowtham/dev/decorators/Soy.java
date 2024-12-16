@@ -4,7 +4,6 @@ import org.gowtham.dev.*;
 
 public class Soy extends CondimentDecorator
 {
-    private double cost = 0.6;
     public Soy(Beverage beverage)
     {
         this.beverage = beverage;
@@ -17,6 +16,14 @@ public class Soy extends CondimentDecorator
 
     @Override public double cost()
     {
-        return beverage.cost() + cost;
+        double cost = beverage.cost();
+        if (beverage.getSize() == Size.TALL) {
+            cost += 0.30;
+        } else if (beverage.getSize() == Size.GRANDE) {
+            cost += 0.45;
+        } else {
+            cost += 0.60;
+        }
+        return cost;
     }
 }

@@ -4,7 +4,6 @@ import org.gowtham.dev.*;
 
 public class Mocha extends CondimentDecorator
 {
-    private double cost = 0.4;
     public Mocha(Beverage beverage)
     {
         this.beverage = beverage;
@@ -17,6 +16,14 @@ public class Mocha extends CondimentDecorator
 
     public double cost()
     {
-        return beverage.cost() + cost;
+        double cost = beverage.cost();
+        if (beverage.getSize() == Size.TALL) {
+            cost += 0.20;
+        } else if (beverage.getSize() == Size.GRANDE) {
+            cost += 0.30;
+        } else {
+            cost += 0.40;
+        }
+        return cost;
     }
 }

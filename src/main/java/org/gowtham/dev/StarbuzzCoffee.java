@@ -14,6 +14,7 @@ public class StarbuzzCoffee
             DarkRoast with double Mocha with whip
          */
         Beverage b2 = new DarkRoast();
+        b2.setSize(Beverage.Size.GRANDE);
         b2 = new Mocha(b2);
         b2 = new Mocha(b2);
         b2 = new Whip(b2);
@@ -23,6 +24,7 @@ public class StarbuzzCoffee
             HouseBlend with Soy, Mocha, and Whip
          */
         Beverage b3 = new HouseBlend();
+        b3.setSize(Beverage.Size.GRANDE);
         b3 = new Soy(b3);
         b3 = new Mocha(b3);
         b3 = new Whip(b3);
